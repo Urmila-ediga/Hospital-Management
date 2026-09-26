@@ -52,11 +52,19 @@ public class DBConnection {
             String url = "jdbc:mysql://" + host + ":" + port + "/" + db
                     + "?sslmode=REQUIRED&serverTimezone=UTC";
 
-            conn = DriverManager.getConnection(url, user, password);
+        //     conn = DriverManager.getConnection(url, user, password);
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        // } catch (Exception e) {
+        //     e.printStackTrace();
+        // }
+        conn = DriverManager.getConnection(url, user, password);
+
+System.out.println("DATABASE CONNECTED SUCCESSFULLY");
+
+} catch (Exception e) {
+    System.err.println("DATABASE CONNECTION FAILED");
+    e.printStackTrace();
+}
 
         return conn;
     }
